@@ -1,24 +1,28 @@
-import React, { useState, lazy, Suspense } from 'react';
-import ControlSection from './components/control-section/Control-Section';
-import ErrorBoundry from './components/Error-Buundry/ErrorBoundry';
+import React from "react";
+import { Suspense, lazy } from "react";
+import "./App.css";
+import Article from "./components/Article";
+import ErrorBoundary from "./components/ErrorBoundary";
+const Comments = lazy(() => import("./components/Comments"));
 
-const Comments = lazy(() => import("./components/view-section/comments-box/comments-box"))
+const Loading = () => <div style={{ color: "white" }}>Loading . . . </div>;
 
 function App() {
-
-  const [comments, setComments] = useState([{ title: 'title:', content: 'content:' }])
-
-  return (
-    <div className="App">
-      <ErrorBoundry>
-        <h1>My Blog</h1>
-        <Suspense fallback={<h1>loading...</h1>}>
-          <Comments comments={comments} setComments={setComments} />
-        </Suspense>
-        <ControlSection setComments={setComments} />
-      </ErrorBoundry>
-    </div>
-  );
+    return (
+        <>
+            <h1 className="webName">BiLA BLOG</h1>
+            <div className="container">
+                <div className="page">
+                    <Article />
+                </div>
+                <Suspense fallback={<Loading />}>
+                    <ErrorBoundary>
+                        <Comments />
+                    </ErrorBoundary>
+                </Suspense>
+            </div>
+        </>
+    );
 }
 
 export default App;
