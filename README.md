@@ -12,7 +12,7 @@ the useRef hook is for. This hook is very straightforward, and takes an initial
 value as the only argument.
 
 app link:
-https://david35008-ticket-manager-glitch.glitch.me/
+
 
 my gif:
 ![hide](./readme-files/NqmT96pg4U.gif)
