@@ -7,27 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App {
-  text-align: center;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
-
-.comment {
-  display: flex;
-  justify-content: space-between;
-  justify-content: space-evenly;
-}
-
-.CommentBox {
-  border: black 1px solid;
-  width: 40%;
-  min-height: 100px;
-  margin: auto;
-}
-
-.ControlSection {
-  display: flex;
-  flex-direction: row;
-justify-content: space-around;
-}
-
-

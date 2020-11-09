@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
+const path = require('path');
 const app = express()
 
 app.use(express.json());
@@ -17,6 +18,9 @@ app.use(morgan(function (tokens, req, res) {
     return myTiny.join(' ')
   }
 }));
+
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
 
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: 'unknown endpoint' });
